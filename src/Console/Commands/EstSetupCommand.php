@@ -64,7 +64,7 @@ class EstSetupCommand extends Command
         $ca->update(['metadata' => $metadata]);
 
         $this->info('');
-        $this->info("EST enabled for CA: {$ca->subject_dn['CN'] ?? $caUuid}");
+        $this->info('EST enabled for CA: ' . ($ca->subject_dn['CN'] ?? $caUuid));
 
         $prefix = config('ca-est.route_prefix', '.well-known/est');
         $estLabel = $metadata['est_label'];
